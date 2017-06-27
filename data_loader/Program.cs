@@ -19,7 +19,7 @@ namespace JsonDataImporter
 
         static void LoadReview(string reviewDataFile)
         {
-            StreamReader reader = new StreamReader(new FileStream(@"C:\Users\tao.chen\Baiduyun\Yelp\yelp_dataset_challenge_academic_dataset\yelp_academic_dataset_review.json", FileMode.Open));
+            StreamReader reader = new StreamReader(new FileStream(@"..\data\yelp_academic_dataset_review.json", FileMode.Open));
             DataContractJsonSerializer d = new DataContractJsonSerializer(typeof(Review), new Type[] { typeof(ReviewVote) }.AsEnumerable());
             ReviewDataContext context = new ReviewDataContext();
             string l = null;
