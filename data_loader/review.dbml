@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="yelp" Class="ReviewDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=yelp;Integrated Security=True" SettingsObjectName="JsonDataImporter.Properties.Settings" SettingsPropertyName="yelpConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.review" Member="reviews">
+    <Type Name="review">
+      <Column Name="review_id" Type="System.String" DbType="NChar(22) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.String" DbType="NChar(22)" CanBeNull="true" />
+      <Column Name="business_id" Type="System.String" DbType="NChar(22)" CanBeNull="true" />
+      <Column Name="text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="stars" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.review_vote" Member="review_votes">
+    <Type Name="review_vote">
+      <Column Name="review_vote_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="review_id" Type="System.String" DbType="NChar(22) NOT NULL" CanBeNull="false" />
+      <Column Name="funny" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="useful" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cool" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

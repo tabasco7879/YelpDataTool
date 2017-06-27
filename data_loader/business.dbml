@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="yelp" Class="BusinessDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=yelp;Integrated Security=True" SettingsObjectName="JsonDataImporter.Properties.Settings" SettingsPropertyName="yelpConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.business" Member="businesses">
+    <Type Name="business">
+      <Column Name="business_id" Type="System.String" DbType="NChar(22) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="full_address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="[open]" Member="open" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="review_count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="stars" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.business_category" Member="business_categories">
+    <Type Name="business_category">
+      <Column Name="business_category_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="business_id" Type="System.String" DbType="NVarChar(22) NOT NULL" CanBeNull="false" />
+      <Column Name="category" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

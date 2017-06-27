@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="../stanford-corenlp-full-2015-04-20/ejml-0.23.jar"/>
+	<classpathentry kind="lib" path="../stanford-corenlp-full-2015-04-20/joda-time.jar"/>
+	<classpathentry kind="lib" path="../stanford-corenlp-full-2015-04-20/jollyday.jar"/>
+	<classpathentry kind="lib" path="../stanford-corenlp-full-2015-04-20/stanford-corenlp-3.5.2.jar"/>
+	<classpathentry kind="lib" path="../stanford-corenlp-full-2015-04-20/stanford-corenlp-3.5.2-models.jar"/>
+	<classpathentry kind="lib" path="../stanford-corenlp-full-2015-04-20/xom.jar"/>
+	<classpathentry kind="lib" path="../sqljdbc_6.0/enu/sqljdbc4.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/tao.chen/SkyDrive/Working/phd_proposal/thesis-work/code/sqljdbc_6.0/enu/auth/x64"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
