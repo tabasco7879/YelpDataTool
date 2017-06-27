@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="yelp2" Class="ReviewDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=yelp2;Integrated Security=True" SettingsObjectName="FeatureBuilder.Properties.Settings" SettingsPropertyName="yelp2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.review_sentence" Member="review_sentences">
+    <Type Name="review_sentence">
+      <Column Name="review_id" Type="System.String" DbType="NVarChar(22) NOT NULL" CanBeNull="false" />
+      <Column Name="sentence_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sentence_text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sentence_pos" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sentence_lemma" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.train_set" Member="train_sets">
+    <Type Name="train_set">
+      <Column Name="review_id" Type="System.String" DbType="NVarChar(22) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.token" Member="tokens">
+    <Type Name="token">
+      <Column Name="token_str" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="token_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="token_pos" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="token_freq" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="token_doc_freq" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="token_score" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.topic_feature_norm" Member="topic_feature_norms">
+    <Type Name="topic_feature_norm">
+      <Column Name="token_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="total_feature" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="total_token" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.topic_feature" Member="topic_features">
+    <Type Name="topic_feature">
+      <Column Name="vocab_id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vocab_id2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="feature_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="feature_freq" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.review" Member="reviews">
+    <Type Name="review">
+      <Column Name="review_id" Type="System.String" DbType="NChar(22) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.String" DbType="NChar(22)" CanBeNull="true" />
+      <Column Name="business_id" Type="System.String" DbType="NChar(22)" CanBeNull="true" />
+      <Column Name="text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="stars" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vocab_new" Member="vocab_news">
+    <Type Name="vocab_new">
+      <Column Name="vocab_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="token_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
